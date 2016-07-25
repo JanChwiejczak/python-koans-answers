@@ -17,9 +17,14 @@
 #   about_triangle_project_2.py
 #
 def triangle(a, b, c):
-    # DELETE 'PASS' AND WRITE THIS CODE
-    pass
-
+    """Classifies the triangle by type, based on the sides length"""
+    if len(set([a, b, c])) == 1: 
+        return 'equilateral'
+    if len(set([a, b, c])) == 2: 
+        return 'isosceles'
+    if len(set([a, b, c])) == 3: 
+        return 'scalene'
+    
 # Error class used in part 2.  No need to change this code.
 class TriangleError(Exception):
     pass
