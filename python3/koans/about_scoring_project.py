@@ -44,11 +44,12 @@ def score(dice):
               4: {1: 0, 2: 0, 3: 400, 4: 400, 5: 400},
               5: {1: 50, 2: 100, 3: 500, 4: 550, 5: 600},
               6: {1: 0, 2: 0, 3: 600, 4: 600, 5: 600}}
-    final_score = 0
-    for roll in count_rolls:
-        final_score += scores[roll][count_rolls[roll]]
-    return final_score
 
+    def get_scores(count_rolls):
+        for roll in count_rolls:
+            yield scores[roll][count_rolls[roll]]
+
+    return sum(get_scores(count_rolls))
 
 class AboutScoringProject(Koan):
     def test_score_of_an_empty_list_is_zero(self):
