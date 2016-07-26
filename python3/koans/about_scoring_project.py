@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from runner.koan import *
+from collections import defaultdict
 
 # Greed is a dice game where you roll up to five dice to accumulate
 # points.  The following "score" function will be used calculate the
@@ -33,11 +34,10 @@ from runner.koan import *
 # Your goal is to write the score method.
 
 def score(dice):
-    # You need to write this method
-    count_rolls = {}
+    count_rolls = defaultdict(int)
     for roll in dice:
-        count_rolls.setdefault(roll, 0)
         count_rolls[roll] += 1
+
     scores = {1: {1: 100, 2: 200, 3: 1000, 4: 1100, 5: 1200},
               2: {1: 0, 2: 0, 3: 200, 4: 200, 5: 200},
               3: {1: 0, 2: 0, 3: 300, 4: 300, 5: 300},
